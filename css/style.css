@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #222;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #0f172a;
+  color: white;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.hero {
+  background: url('../images/banner.jpg') center/cover;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.page {
+  padding: 20px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #0f172a;
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px;
+  background: #0f172a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
