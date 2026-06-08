@@ -1,34 +1,53 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial, sans-serif;
-  background: #f4f7fb;
-  color: #222;
+  background: #f5f7fb;
+  color: #1f2937;
+  line-height: 1.6;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  padding: 15px 30px;
-  background: #0f172a;
+  align-items: center;
+  padding: 15px 25px;
+  background: #0b1f3a;
   color: white;
+  flex-wrap: wrap;
 }
 
 .logo {
-  font-size: 20px;
   font-weight: bold;
+  font-size: 18px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 nav a {
-  color: white;
-  margin: 0 10px;
+  color: #e5e7eb;
   text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.1);
 }
 
 .hero {
-  background: url('../images/banner.jpg') center/cover;
+  background: linear-gradient(120deg, #0b1f3a, #2563eb);
   color: white;
-  padding: 80px 20px;
   text-align: center;
+  padding: 80px 20px;
 }
 
 .page {
@@ -36,66 +55,79 @@ nav a {
 }
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
+  margin-top: 15px;
 }
 
 .card {
   background: white;
-  padding: 10px;
-  border-radius: 10px;
-  width: 250px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card img {
   width: 100%;
-  border-radius: 8px;
+  height: 160px;
+  object-fit: cover;
 }
 
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+form {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
+  margin-top: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: 10px;
+  background: #0b1f3a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 footer {
   text-align: center;
   padding: 15px;
-  background: #0f172a;
+  background: #0b1f3a;
   color: white;
+  margin-top: 30px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 400px;
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }
 
-input, textarea {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
+@media (max-width: 600px) {
+  .hero {
+    padding: 60px 15px;
+  }
 
-button {
-  padding: 10px;
-  background: #0f172a;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .grid {
+  nav {
     flex-direction: column;
   }
 
-  .two-col {
-    grid-template-columns: 1fr;
+  .card img {
+    height: 140px;
   }
 }
