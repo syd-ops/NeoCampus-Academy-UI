@@ -22,8 +22,16 @@ header {
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.logo img {
+    height: clamp(40px, 5vw, 60px);
+    width: auto;
 }
 
 nav {
